@@ -4,21 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icons/favicon_todo_checked.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
   </head>
-  <body>
-    <div class="container">
-      <div class="todo-app">
-        <h2>to-do</h2>
-        <h2>list</h2>
-        <div class="row">
-          <input type="text" id="input-box" placeholder="note something">
-          <button>add</button>
+  <body class="bg-white">
+    <div class="container mx-auto max-w-screen-sm space-y-4 px-4 py-4">
+      <h2
+        class="header inline-block text-xl text-black italic border-black border-2 border-solid rounded-3xl px-4"
+      >
+        to-do
+      </h2>
+      <h2
+        class="header bg-red-500 inline-block text-xl text-white italic border-2 border-solid border-red-500 rounded-3xl px-4"
+      >
+        do-do
+      </h2>
+      <h2
+        class="header inline-block text-xl text-black italic border-black border-2 border-solid rounded-3xl px-4"
+      >
+        list
+      </h2>
+
+      <div class="todo-app bg-white border-black rounded-3xl space-y-4">
+        <div
+          class="row flex justify-between bg-black border-2 border-black rounded-3xl pl-3"
+        >
+          <input
+            type="text"
+            class="placeholder text-white italic bg-transparent outline-none pl-2"
+            id="input-box"
+            placeholder="note something..."
+          />
+          <button
+            type="button"
+            class="bg-red-500 rounded-3xl text-xl text-white px-4 py-2"
+          >
+            +
+          </button>
         </div>
-        <ul id="list-container">
-          <li>task 1</li>
-          <li>task 2</li>
-          <li>task 3</li>
+        <ul class="space-y-4" id="list-container">
+          <li class="rounded-3xl border-2 border-black px-4 py-2">task 1</li>
+          <li class="rounded-3xl border-2 border-black px-4 py-2">task 2</li>
+          <li class="rounded-3xl border-2 border-black px-4 py-2">task 3</li>
         </ul>
       </div>
     </div>
