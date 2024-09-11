@@ -3,33 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>to-do list</title>
     <link rel="icon" href="icons/favicon_todo_checked.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="main.js"></script>
   </head>
   <body class="bg-white">
     <div class="container mx-auto max-w-screen-sm space-y-4 px-4 py-4">
       <h2
-        class="header inline-block text-xl text-black italic border-black border-2 border-solid rounded-3xl px-4"
+        class="inline-block text-3xl text-black border-black border-2 border-solid rounded-full px-4"
       >
         to-do
       </h2>
       <h2
-        class="header bg-red-500 inline-block text-xl text-white italic border-2 border-solid border-red-500 rounded-3xl px-4"
+        class="bg-black inline-block text-3xl text-white border-2 border-solid border-black rounded-full px-4"
       >
-        do-do
+        to-buy
       </h2>
       <h2
-        class="header inline-block text-xl text-black italic border-black border-2 border-solid rounded-3xl px-4"
+        class="inline-block text-3xl text-black border-black border-2 border-solid rounded-full px-4"
       >
         list
       </h2>
 
       <div class="todo-app bg-white border-black rounded-3xl space-y-4">
         <div
-          class="row flex justify-between bg-black border-2 border-black rounded-3xl pl-3"
+          class="row flex justify-between bg-black border-2 border-black rounded-full pl-3 px-2 py-2"
         >
           <input
             type="text"
@@ -39,17 +37,25 @@
           />
           <button
             type="button"
-            class="bg-red-500 rounded-3xl text-xl text-white px-4 py-2"
+            id="buttonAdd"
+            class="hover:bg-black active:scale-75 transition duration-150 ease-out hover:ease-in bg-red-500 rounded-full text-2xl text-white px-4 py-2"
           >
-            +
+            add
           </button>
         </div>
         <ul class="space-y-4" id="list-container">
-          <li class="rounded-3xl border-2 border-black px-4 py-2">task 1</li>
-          <li class="rounded-3xl border-2 border-black px-4 py-2">task 2</li>
-          <li class="rounded-3xl border-2 border-black px-4 py-2">task 3</li>
+          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+            task 1
+          </li>
+          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+            task 2
+          </li>
+          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+            task 3
+          </li>
         </ul>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
