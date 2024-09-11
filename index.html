@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white">
-    <div class="container mx-auto max-w-screen-sm space-y-4 px-4 py-4">
+    <div class="container mx-auto max-w-screen-sm space-y-4 px-4 py-2">
       <h2
         class="inline-block text-3xl text-black border-black border-2 border-solid rounded-full px-4"
       >
@@ -31,26 +31,34 @@
         >
           <input
             type="text"
-            class="placeholder text-white italic bg-transparent outline-none pl-2"
+            class="flex-grow placeholder:text-slate-400 text-white italic bg-transparent outline-none pl-4 pr-4"
             id="input-box"
             placeholder="note something..."
           />
+
           <button
             type="button"
             id="buttonAdd"
-            class="hover:bg-black active:scale-75 transition duration-150 ease-out hover:ease-in bg-red-500 rounded-full text-2xl text-white px-4 py-2"
+            class="hover:bg-black active:scale-75 transition duration-150 ease-out hover:ease-in bg-red-500 rounded-full text-2xl text-white italic px-4 py-2"
           >
             add
           </button>
         </div>
-        <ul class="space-y-4" id="list-container">
-          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+
+        <ul class="space-y-4" id="list">
+          <li
+            class="font-light text-base rounded-full border-2 border-black px-4 py-2"
+          >
             task 1
           </li>
-          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+          <li
+            class="font-light text-base rounded-full border-2 border-black px-4 py-2"
+          >
             task 2
           </li>
-          <li class="rounded-full border-2 border-solid border-black px-4 py-2">
+          <li
+            class="font-light text-base rounded-full border-2 border-black px-4 py-2"
+          >
             task 3
           </li>
         </ul>
