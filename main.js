@@ -1,7 +1,15 @@
 let userInput = document.getElementById("input-box");
-
 let btnAdd = document.getElementById("buttonAdd");
+
 btnAdd.addEventListener("click", handleClick);
+
+userInput.addEventListener("keydown", handleEnter);
+
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    handleClick();
+  }
+}
 
 function handleClick() {
   let userValue = userInput.value.trim();
@@ -12,15 +20,17 @@ function handleClick() {
 
   let li = document.createElement("li");
   li.classList.add(
+    "transform",
+    "-translate-y-8",
+    "transistion-transform",
+    "opacity-0",
     "transition",
     "duration-300",
     "ease-in-out",
+    "bg-stone-200",
     "font-light",
     "text-base",
     "rounded-full",
-    "border-2",
-    "border-solid",
-    "border-black",
     "mx-4",
     "pl-4",
     "px-2",
@@ -56,4 +66,10 @@ function handleClick() {
   let ul = document.getElementById("list");
   ul.appendChild(li);
   li.appendChild(btnDel);
+
+  li.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    li.classList.remove("-translate-y-8", "opacity-0");
+  }, 10);
 }

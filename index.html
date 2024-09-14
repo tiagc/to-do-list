@@ -8,9 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white">
+    <div class="h1 text-6xl italic pt-4 px-6 group">
+      «hey sorry ich chan höt ned, ich muss no go
+      <span
+        class="opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+        >toastbrot</span
+      >
+      chaufe.»
+    </div>
     <div class="sticky top-0 z-10">
       <div
-        class="gray-container mx-auto my-4 max-w-screen-sm px-6 py-6 bg-gray-200 rounded-3xl"
+        class="gray-container bg-stone-200 mx-auto my-6 max-w-screen-sm px-6 py-6 rounded-3xl"
       >
         <div class="header-container">
           <button
@@ -37,7 +45,7 @@
         >
           <input
             type="text"
-            class="placeholder:text-gray-200 text-white italic bg-transparent outline-none"
+            class="placeholder:text-stone-200 text-white italic bg-transparent outline-none"
             id="input-box"
             placeholder="note something..."
           />
@@ -51,7 +59,7 @@
         </div>
       </div>
     </div>
-    <ul class="max-w-screen-sm mx-auto space-y-2 px-3" id="list"></ul>
+    <ul class="max-w-screen-sm mx-auto space-y-4 px-3" id="list"></ul>
     <script src="main.js"></script>
   </body>
 </html>
