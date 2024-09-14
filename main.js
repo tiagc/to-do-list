@@ -12,18 +12,23 @@ function handleClick() {
 
   let li = document.createElement("li");
   li.classList.add(
+    "transition",
+    "duration-300",
+    "ease-in-out",
     "font-light",
     "text-base",
     "rounded-full",
     "border-2",
     "border-solid",
     "border-black",
-    "pl-6",
+    "mx-4",
+    "pl-4",
     "px-2",
     "py-2",
     "flex",
     "justify-between",
-    "items-center"
+    "items-center",
+    "group"
   );
 
   let btnDel = document.createElement("button");
@@ -39,7 +44,12 @@ function handleClick() {
     "text-2xl",
     "text-white",
     "px-4",
-    "py-2"
+    "py-2",
+    "opacity-0",
+    "group-hover:opacity-100",
+    "transition",
+    "duration-300",
+    "ease-in-out"
   );
 
   li.appendChild(document.createTextNode(userValue));
