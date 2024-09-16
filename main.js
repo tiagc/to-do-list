@@ -1,10 +1,3 @@
-let userInput = document.getElementById("input-box");
-let btnAdd = document.getElementById("buttonAdd");
-
-btnAdd.addEventListener("click", handleClick);
-
-userInput.addEventListener("keydown", handleEnter);
-
 function handleEnter(event) {
   if (event.key === "Enter") {
     handleClick();
@@ -21,13 +14,14 @@ function handleClick() {
   let li = document.createElement("li");
   li.classList.add(
     "transform",
-    "-translate-y-8",
+    "translate-y-8",
     "transistion-transform",
     "opacity-0",
     "transition",
     "duration-300",
     "ease-in-out",
-    "bg-stone-200",
+    "bg-black",
+    "text-white",
     "font-light",
     "text-base",
     "rounded-full",
@@ -62,14 +56,51 @@ function handleClick() {
     "ease-in-out"
   );
 
-  li.appendChild(document.createTextNode(userValue));
+  btnDel.addEventListener("click", deleteElement);
+
   let ul = document.getElementById("list");
-  ul.appendChild(li);
+  li.appendChild(document.createTextNode(userValue));
   li.appendChild(btnDel);
+  ul.appendChild(li);
 
   li.scrollIntoView({ behavior: "smooth" });
 
   setTimeout(() => {
+    li.classList.remove("translate-y-8", "opacity-0");
+  }, 200);
+}
+
+function deleteElement(event) {
+  event.target.parentElement.remove();
+  setTimeout(() => {
     li.classList.remove("-translate-y-8", "opacity-0");
-  }, 10);
+  }, 200);
+}
+
+let userInput = document.getElementById("input-box");
+let btnAdd = document.getElementById("buttonAdd");
+
+btnAdd.addEventListener("click", handleClick);
+userInput.addEventListener("keydown", handleEnter);
+
+let btnPlus = document.getElementById("plus");
+
+btnPlus.addEventListener("click", newClass);
+function newClass() {
+  btnPlus.classList.add(
+    "bg-white",
+    "text-3xl",
+    "text-black",
+    "border-black",
+    "border-2",
+    "rounded-full",
+    "px-4",
+    "hover:bg-gray-200",
+    "transition",
+    "duration-150",
+    "ease-out",
+    "hover:ease-in",
+    "focus:bg-black",
+    "focus:text-white"
+  );
 }

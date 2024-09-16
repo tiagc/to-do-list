@@ -3,63 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to-do list</title>
+    <title>to-list</title>
     <link rel="icon" href="icons/favicon_todo_checked.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white">
-    <div class="h1 text-6xl italic pt-4 px-6 group">
+    <!--<div class="h1 text-6xl italic pt-4 px-6 group">
       «hey sorry ich chan höt ned, ich muss no go
       <span
         class="opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
         >toastbrot</span
       >
       chaufe.»
-    </div>
-    <div class="sticky top-0 z-10">
+    </div>-->
+    <div class="sticky top-0 z-10 mx-2">
       <div
-        class="gray-container bg-stone-200 mx-auto my-6 max-w-screen-sm px-6 py-6 rounded-3xl"
+        class="gray-container bg-white border-2 border-gray-200 mx-auto mt-2 mb-4 max-w-screen-sm px-4 py-4 rounded-2xl"
       >
-        <div class="header-container">
+        <div class="header-container flex items-center gap-2">
           <button
-            class="bg-white text-3xl text-black border-black border-2 border-solid rounded-full px-4 hover:bg-gray-400 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
+            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
             id="tabs"
           >
             to-do
           </button>
           <button
-            class="bg-white text-3xl text-black border-black border-2 border-solid rounded-full px-4 hover:bg-gray-400 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
+            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
             id="tabs"
           >
             to-buy
           </button>
           <h1
-            class="inline-block text-3xl text-white bg-black border-black border-2 border-solid rounded-full px-4"
+            class="text-2xl text-white bg-black border-black border-2 rounded-full px-4"
             id="tabs"
           >
             list
           </h1>
+          <button
+            class="bg-white justify-center border-black border-2 rounded-full px-2 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white p-2"
+            id="plus"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 5v14m-7-7h14" />
+            </svg>
+          </button>
         </div>
         <div
           class="textbar flex justify-between bg-black border-2 border-black rounded-full mt-4 pl-4 px-2 py-2"
         >
           <input
             type="text"
-            class="placeholder:text-stone-200 text-white italic bg-transparent outline-none"
+            class="placeholder:text-gray-200 text-white italic bg-transparent outline-none"
             id="input-box"
             placeholder="note something..."
           />
           <button
             type="button"
             id="buttonAdd"
-            class="hover:bg-black active:scale-75 duration-150 ease-in hover:ease-in bg-red-500 rounded-full text-2xl text-white italic px-4 py-4"
+            class="hover:bg-black active:scale-75 duration-150 ease-in hover:ease-in bg-red-500 rounded-full px-4 py-4"
           >
-            add
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 5v14m-7-7h14" />
+            </svg>
           </button>
         </div>
       </div>
     </div>
-    <ul class="max-w-screen-sm mx-auto space-y-4 px-3" id="list"></ul>
+    <ul class="max-w-screen-sm mx-auto space-y-4" id="list"></ul>
     <script src="main.js"></script>
   </body>
 </html>
