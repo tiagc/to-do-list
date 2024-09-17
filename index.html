@@ -22,13 +22,13 @@
       >
         <div class="header-container flex flex-wrap items-center gap-2">
           <button
-            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
+            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 hover:border-gray-400 transition duration-150 ease-in hover:ease-in focus:bg-black focus:text-white"
             id="tabs"
           >
             to-do
           </button>
           <button
-            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
+            class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 hover:border-gray-400 transition duration-150 ease-in hover:ease-in focus:bg-black focus:text-white"
             id="tabs"
           >
             to-buy
@@ -40,25 +40,25 @@
             list
           </h1>
           <button
-            class="bg-white justify-center border-black border-2 rounded-full px-2 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white p-2"
+            class="bg-white justify-center border-black border-2 rounded-full px-2 hover:bg-gray-200 hover:border-gray-400 transition duration-150 ease-in hover:ease-in focus:bg-red-500 focus:border-red-500 focus:text-white p-2"
             id="plus"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4"
+              class="plus-icon w-4 h-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              stroke-width="3"
+              stroke-linecap="square"
             >
               <path d="M12 5v14m-7-7h14" />
             </svg>
           </button>
+          <div id="list-box"></div>
         </div>
         <div
-          class="textbar flex justify-between bg-black rounded-full mt-4 pl-4 px-2 py-2"
+          class="textbar flex justify-between bg-black rounded-full mt-2 pl-4 px-2 py-2"
         >
           <input
             type="text"
@@ -74,13 +74,12 @@
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-4"
+              class="red-plus-icon size-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              stroke-width="3"
+              stroke-linecap="square"
             >
               <path d="M12 5v14m-7-7h14" />
             </svg>

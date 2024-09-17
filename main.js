@@ -88,12 +88,19 @@ let btnAdd = document.getElementById("buttonAdd");
 btnAdd.addEventListener("click", handleClick);
 userInput.addEventListener("keydown", handleEnter);
 
+//create new list title
+
 let btnPlus = document.getElementById("plus");
-btnPlus.addEventListener("click", newClass);
-function newClass() {
-  btnPlus.classList.add(
-    "bg-black",
-    "text-white",
+let container = document.getElementById("list-box");
+
+btnPlus.addEventListener("click", handleClickTabs);
+
+function handleClickTabs() {
+  let newButton = document.createElement("button");
+  newButton.classList.add(
+    "items-center",
+    "justify-center",
+    "bg-white",
     "text-2xl",
     "text-black",
     "border-black",
@@ -101,12 +108,50 @@ function newClass() {
     "rounded-full",
     "px-4",
     "hover:bg-gray-200",
+    "hover:border-gray-400",
     "transition",
     "duration-150",
-    "ease-out",
-    "hover:ease-in",
+    "ease-in",
     "focus:bg-black",
-    "focus:text-white"
+    "focus:text-white",
+    "focus:outline-none",
+    "mb-2",
+    "ml-2"
   );
+
+  let inputField = document.createElement("input");
+  inputField.type = "text";
+  inputField.maxLength = 8;
+  inputField.classList.add(
+    "bg-transparent",
+    "border-none",
+    "outline-none",
+    "w-20",
+    "text-center",
+    "cursor-pointer"
+  );
+
+  inputField.addEventListener("blur", function () {
+    let inputValue = inputField.value.trim();
+    if (inputValue) {
+      newButton.innerText = inputValue;
+      inputField.remove();
+    } else {
+      inputField.focus();
+    }
+  });
+
+  inputField.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+
+  //automatically focus on the input field when created
+  newButton.appendChild(inputField);
+  setTimeout(function () {
+    inputField.focus();
+  }, 0);
+
+  container.appendChild(newButton);
+
   console.log(btnPlus);
 }
