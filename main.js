@@ -24,8 +24,8 @@ function handleClick() {
     "text-white",
     "font-light",
     "text-base",
-    "rounded-full",
-    "mx-4",
+    "rounded-3xl",
+    "mx-6",
     "pl-4",
     "px-2",
     "py-2",
@@ -34,10 +34,34 @@ function handleClick() {
     "items-center",
     "group"
   );
+  li.appendChild(document.createTextNode(userValue));
 
-  let btnDel = document.createElement("button");
-  btnDel.textContent = "X";
-  btnDel.classList.add(
+  let btnDel = createDeleteButton();
+
+  btnDel.addEventListener("click", deleteElement);
+
+  let ul = document.getElementById("list");
+  li.appendChild(btnDel);
+  ul.appendChild(li);
+
+  li.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    li.classList.remove("translate-y-8", "opacity-0");
+  }, 200);
+}
+
+function deleteElement(event) {
+  event.target.parentElement.classList.remove("-translate-y-8", "opacity-0");
+  setTimeout(() => {
+    event.target.parentElement.remove();
+  }, 200);
+}
+
+function createDeleteButton() {
+  let btnDel21312 = document.createElement("button");
+  btnDel21312.textContent = "X";
+  btnDel21312.classList.add(
     "hover:bg-black",
     "active:scale-75",
     "duration-150",
@@ -55,26 +79,7 @@ function handleClick() {
     "duration-300",
     "ease-in-out"
   );
-
-  btnDel.addEventListener("click", deleteElement);
-
-  let ul = document.getElementById("list");
-  li.appendChild(document.createTextNode(userValue));
-  li.appendChild(btnDel);
-  ul.appendChild(li);
-
-  li.scrollIntoView({ behavior: "smooth" });
-
-  setTimeout(() => {
-    li.classList.remove("translate-y-8", "opacity-0");
-  }, 200);
-}
-
-function deleteElement(event) {
-  event.target.parentElement.remove();
-  setTimeout(() => {
-    li.classList.remove("-translate-y-8", "opacity-0");
-  }, 200);
+  return btnDel21312;
 }
 
 let userInput = document.getElementById("input-box");
@@ -84,12 +89,12 @@ btnAdd.addEventListener("click", handleClick);
 userInput.addEventListener("keydown", handleEnter);
 
 let btnPlus = document.getElementById("plus");
-
 btnPlus.addEventListener("click", newClass);
 function newClass() {
   btnPlus.classList.add(
-    "bg-white",
-    "text-3xl",
+    "bg-black",
+    "text-white",
+    "text-2xl",
     "text-black",
     "border-black",
     "border-2",
@@ -103,4 +108,5 @@ function newClass() {
     "focus:bg-black",
     "focus:text-white"
   );
+  console.log(btnPlus);
 }

@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white">
-    <!--<div class="h1 text-6xl italic pt-4 px-6 group">
+    <!--<div class="h1 text-2xl italic pt-4 px-6 group">
       «hey sorry ich chan höt ned, ich muss no go
       <span
         class="opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
@@ -18,9 +18,9 @@
     </div>-->
     <div class="sticky top-0 z-10 mx-2">
       <div
-        class="gray-container bg-white border-2 border-gray-200 mx-auto mt-2 mb-4 max-w-screen-sm px-4 py-4 rounded-2xl"
+        class="gray-container bg-white border-2 border-gray-200 mx-auto mt-2 mb-4 max-w-screen-sm px-2 py-4 rounded-2xl"
       >
-        <div class="header-container flex items-center gap-2">
+        <div class="header-container flex flex-wrap items-center gap-2">
           <button
             class="bg-white text-2xl text-black border-black border-2 rounded-full px-4 hover:bg-gray-200 transition duration-150 ease-out hover:ease-in focus:bg-black focus:text-white"
             id="tabs"
@@ -48,7 +48,7 @@
               class="w-4 h-4"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="black"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -58,13 +58,14 @@
           </button>
         </div>
         <div
-          class="textbar flex justify-between bg-black border-2 border-black rounded-full mt-4 pl-4 px-2 py-2"
+          class="textbar flex justify-between bg-black rounded-full mt-4 pl-4 px-2 py-2"
         >
           <input
             type="text"
-            class="placeholder:text-gray-200 text-white italic bg-transparent outline-none"
+            class="placeholder:text-gray-200 text-white italic bg-transparent outline-none w-full p-2"
             id="input-box"
             placeholder="note something..."
+            autocomplete="off"
           />
           <button
             type="button"
@@ -73,11 +74,11 @@
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4"
+              class="size-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="4"
+              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
             >
@@ -87,6 +88,7 @@
         </div>
       </div>
     </div>
+
     <ul class="max-w-screen-sm mx-auto space-y-4" id="list"></ul>
     <script src="main.js"></script>
   </body>
