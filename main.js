@@ -10,9 +10,24 @@ function handleClick() {
     return;
   }
   userInput.value = "";
+  let liGeileSiech = createListElement(userValue);
 
-  let li = document.createElement("li");
-  li.classList.add(
+  let btnDel = createDeleteButton();
+  btnDel.addEventListener("click", deleteElement);
+
+  ul.appendChild(liGeileSiech);
+  liGeileSiech.appendChild(btnDel);
+
+  liGeileSiech.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(function () {
+    liGeileSiech.classList.remove("translate-y-8", "opacity-0");
+  }, 200);
+}
+
+function createListElement(txtEingabe) {
+  let listItem = document.createElement("li");
+  listItem.classList.add(
     "transform",
     "translate-y-8",
     "transistion-transform",
@@ -34,34 +49,13 @@ function handleClick() {
     "items-center",
     "group"
   );
-  li.appendChild(document.createTextNode(userValue));
-
-  let btnDel = createDeleteButton();
-
-  btnDel.addEventListener("click", deleteElement);
-
-  let ul = document.getElementById("list");
-  li.appendChild(btnDel);
-  ul.appendChild(li);
-
-  li.scrollIntoView({ behavior: "smooth" });
-
-  setTimeout(() => {
-    li.classList.remove("translate-y-8", "opacity-0");
-  }, 200);
-}
-
-function deleteElement(event) {
-  event.target.parentElement.classList.remove("-translate-y-8", "opacity-0");
-  setTimeout(() => {
-    event.target.parentElement.remove();
-  }, 200);
+  listItem.appendChild(document.createTextNode(txtEingabe));
+  return listItem;
 }
 
 function createDeleteButton() {
-  let btnDel21312 = document.createElement("button");
-  btnDel21312.textContent = "X";
-  btnDel21312.classList.add(
+  let btnDel = document.createElement("button");
+  btnDel.classList.add(
     "hover:bg-black",
     "active:scale-75",
     "duration-150",
@@ -79,79 +73,20 @@ function createDeleteButton() {
     "duration-300",
     "ease-in-out"
   );
-  return btnDel21312;
+  btnDel.textContent = "X";
+  return btnDel;
 }
 
+function deleteElement(event) {
+  event.target.parentElement.classList.add("-translate-y-8", "opacity-0");
+  setTimeout(function () {
+    event.target.parentElement.remove();
+  }, 200);
+}
+
+let ul = document.getElementById("list");
 let userInput = document.getElementById("input-box");
 let btnAdd = document.getElementById("buttonAdd");
 
-btnAdd.addEventListener("click", handleClick);
 userInput.addEventListener("keydown", handleEnter);
-
-//create new list title
-
-let btnPlus = document.getElementById("plus");
-let container = document.getElementById("list-box");
-
-btnPlus.addEventListener("click", handleClickTabs);
-
-function handleClickTabs() {
-  let newButton = document.createElement("button");
-  newButton.classList.add(
-    "items-center",
-    "justify-center",
-    "bg-white",
-    "text-2xl",
-    "text-black",
-    "border-black",
-    "border-2",
-    "rounded-full",
-    "px-4",
-    "hover:bg-gray-200",
-    "hover:border-gray-400",
-    "transition",
-    "duration-150",
-    "ease-in",
-    "focus:bg-black",
-    "focus:text-white",
-    "focus:outline-none",
-    "mb-2",
-    "ml-2"
-  );
-
-  let inputField = document.createElement("input");
-  inputField.type = "text";
-  inputField.maxLength = 8;
-  inputField.classList.add(
-    "bg-transparent",
-    "border-none",
-    "outline-none",
-    "w-20",
-    "text-center",
-    "cursor-pointer"
-  );
-
-  inputField.addEventListener("blur", function () {
-    let inputValue = inputField.value.trim();
-    if (inputValue) {
-      newButton.innerText = inputValue;
-      inputField.remove();
-    } else {
-      inputField.focus();
-    }
-  });
-
-  inputField.addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
-
-  //automatically focus on the input field when created
-  newButton.appendChild(inputField);
-  setTimeout(function () {
-    inputField.focus();
-  }, 0);
-
-  container.appendChild(newButton);
-
-  console.log(btnPlus);
-}
+btnAdd.addEventListener("click", handleClick);
